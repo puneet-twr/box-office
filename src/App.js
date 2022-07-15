@@ -5,18 +5,17 @@ import Home from "./pages/Home";
 import Starred from "./pages/Starred";
 function App() {
   return (
-    <div>
-    <Navs/>   
     <Switch>
-      <Route exact path="/"><Home/></Route>
+      <Route exact path="/">
+        <Home />
+      </Route>
 
       <Route exact path="/starred">
-        <Starred/>
+        <Starred />
       </Route>
 
       <Route>404 not found</Route>
     </Switch>
-    </div>
   );
 }
 
