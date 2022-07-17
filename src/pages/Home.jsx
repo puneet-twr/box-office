@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ActorGrid from "../components/actor/ActorGrid";
 import MainPageLayout from "../components/MainPageLayout";
 import ShowGrid from "../components/show/ShowGrid";
@@ -9,6 +9,9 @@ const Home = () => {
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState("shows");
   const isShowsSearch = searchOption === "shows";
+
+  
+
   const onInputChange = (e) => {
     setInput(e.target.value);
   };
@@ -26,7 +29,7 @@ const Home = () => {
     setSearchOption(e.target.value);
   };
   const renderResults = () => {
-    console.log("Working");
+    // console.log("Working");
     if (results && results.length === 0) {
       return <div>No results</div>;
     }

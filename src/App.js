@@ -4,6 +4,7 @@ import Navs from "./components/Navs";
 import Home from "./pages/Home";
 import Starred from "./pages/Starred";
 import "./App.css";
+import Show from "./pages/Show";
 function App() {
   return (
     <Switch>
@@ -13,6 +14,10 @@ function App() {
 
       <Route exact path="/starred">
         <Starred />
+      </Route>
+
+      <Route exact path="/show/:id">
+        <Show/>
       </Route>
 
       <Route>404 not found</Route>
