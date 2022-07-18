@@ -9,17 +9,18 @@ function showsReducer(prevState, action){
             return prevState.filter(showId => showId!==action.showId);
         }
         default: return prevState;
-    }
+    }       
 }
 
 function usePersistedReducer(reducer, initialState,key){
     const [state, dispatch]=useReducer(reducer, initialState,(initial)=>{
         const persisted=localStorage.getItem(key);
         
-        return persisted? JSON.parse(persisted): initial
+        return persisted? JSON.parse(persisted): initial;
     });
     useEffect(()=>{
         localStorage.setItem(key, JSON.stringify(state ))
+        console.log("saving...Key: ",key," item: ",state);
     }, [state,key] );
 
     return [state,dispatch];
